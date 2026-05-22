@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma Elegance Shop</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:28px 70px;
+background:#000;
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid #222;
+}
+
+.logo{
+font-size:36px;
+font-weight:bold;
+color:#f5d442;
+letter-spacing:6px;
+}
+
+.menu{
+display:flex;
+gap:30px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-size:20px;
+}
+
+.menu a:hover{
+color:#f5d442;
+}
+
+.hero{
+height:85vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+url("https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:72px;
+color:#f5d442;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:26px;
+margin-bottom:35px;
+}
+
+.btn{
+background:#f5d442;
+color:black;
+padding:17px 38px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+}
+
+.btn:hover{
+background:white;
+}
+
+.section{
+padding:80px 8%;
+}
+
+.section h2{
+text-align:center;
+font-size:48px;
+color:#f5d442;
+margin-bottom:50px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+}
+
+.card{
+background:#171717;
+border-radius:22px;
+overflow:hidden;
+border:1px solid #2b2b2b;
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:360px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card-content h3{
+font-size:26px;
+margin-bottom:12px;
+}
+
+.price{
+color:#f5d442;
+font-size:26px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.card-content p{
+color:#ddd;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+.order-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#f5d442;
+color:black;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.order-btn:hover{
+background:white;
+}
+
+.about,
+.payment,
+.contact{
+max-width:950px;
+margin:auto;
+text-align:center;
+font-size:21px;
+line-height:1.8;
+color:#ddd;
+}
+
+.payment-boxes{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-top:35px;
+}
+
+.payment-box{
+background:#171717;
+padding:25px;
+border-radius:18px;
+width:230px;
+border:1px solid #333;
+}
+
+.payment-box h3{
+color:#f5d442;
+margin-bottom:10px;
+}
+
+.form{
+max-width:750px;
+margin:40px auto 0;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+input,
+select,
+textarea{
+padding:18px;
+border:none;
+border-radius:12px;
+font-size:18px;
+}
+
+textarea{
+height:130px;
+}
+
+.submit-btn{
+background:#f5d442;
+color:black;
+padding:18px;
+border:none;
+border-radius:40px;
+font-size:19px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+background:#25D366;
+color:white;
+padding:17px 25px;
+border-radius:45px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 8px 25px rgba(0,0,0,.4);
+}
+
+footer{
+background:#000;
+text-align:center;
+padding:35px;
+color:#aaa;
+border-top:1px solid #222;
+}
+
+@media(max-width:800px){
+
+nav{
+flex-direction:column;
+gap:20px;
+padding:25px;
+}
+
+.logo{
+font-size:28px;
+text-align:center;
+}
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.section{
+padding:55px 5%;
+}
+
+.section h2{
+font-size:34px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">EMMA ELEGANCE SHOP</div>
+
+<div class="menu">
+<a href="#home">Accueil</a>
+<a href="#products">Produits</a>
+<a href="#about">À propos</a>
+<a href="#payment">Paiement</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero" id="home">
+
+<div>
+<h1>Suits & Shoes</h1>
+
+<p>
+Costumes élégants, chaussures premium et style gentleman.
+</p>
+
+<a href="#products" class="btn">
+Voir la collection
+</a>
+
+</div>
+</section>
+
+<section class="section" id="products">
+
+<h2>Nos Produits</h2>
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1593032465171-8bd9f0f1c0b3?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Costume Noir Premium</h3>
+
+<p class="price">$299</p>
+
+<p>
+Costume élégant pour mariage, business et événements spéciaux.
+</p>
+
+<a href="https://buy.stripe.com/test_4gM8wOcBi4Lf5iC80Wasg00" target="_blank">
+<button class="order-btn">
+Payer maintenant
+</button>
+</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Chaussures Luxe</h3>
+
+<p class="price">$149</p>
+
+<p>
+Chaussures modernes avec finition premium pour gentleman.
+</p>
+
+<a href="https://buy.stripe.com/test_4gM8wOcBi4Lf5iC80Wasg00" target="_blank">
+<button class="order-btn">
+Payer maintenant
+</button>
+</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Chemise Élégance</h3>
+
+<p class="price">$79</p>
+
+<p>
+Chemise chic pour accompagner vos costumes et vos tenues modernes.
+</p>
+
+<a href="https://buy.stripe.com/test_4gM8wOcBi4Lf5iC80Wasg00" target="_blank">
+<button class="order-btn">
+Payer maintenant
+</button>
+</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Costume Bleu Royal</h3>
+
+<p class="price">$329</p>
+
+<p>
+Style professionnel, parfait pour cérémonies et grandes occasions.
+</p>
+
+<a href="https://buy.stripe.com/test_4gM8wOcBi4Lf5iC80Wasg00" target="_blank">
+<button class="order-btn">
+Payer maintenant
+</button>
+</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Sneakers Premium</h3>
+
+<p class="price">$119</p>
+
+<p>
+Chaussures confortables pour un style moderne et propre.
+</p>
+
+<a href="https://buy.stripe.com/test_4gM8wOcBi4Lf5iC80Wasg00" target="_blank">
+<button class="order-btn">
+Payer maintenant
+</button>
+</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="shoes.jpg" alt="Luxury Shoes">
+<div class="card-content">
+
+<h3>Costume Beige Class</h3>
+
+<p class="price">$349</p>
+
+<p>
+Look chic, doux et distingué pour événements spéciaux.
+</p>
+
+<a href="https://buy.stripe.com/test_4gM8wOcBi4Lf5iC80Wasg00" target="_blank">
+<button class="order-btn">
+Payer maintenant
+</button>
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="about">
+
+<h2>À propos</h2>
+
+<div class="about">
+
+<p>
+Emma Elegance Shop est une boutique spécialisée dans les costumes,
+chaussures et accessoires pour hommes.
+
+Notre objectif est d’offrir un style élégant, moderne et professionnel
+pour chaque occasion.
+</p>
+
+</div>
+</section>
+
+<section class="section" id="payment">
+
+<h2>Paiement en ligne</h2>
+
+<div class="payment">
+
+<p>
+Paiement sécurisé avec Stripe.
+Cliquez sur “Payer maintenant” pour commander directement en ligne.
+</p>
+
+<div class="payment-boxes">
+
+<div class="payment-box">
+<h3>Visa</h3>
+<p>Paiement sécurisé</p>
+</div>
+
+<div class="payment-box">
+<h3>Mastercard</h3>
+<p>Paiement rapide</p>
+</div>
+
+<div class="payment-box">
+<h3>Stripe</h3>
+<p>Paiement officiel</p>
+</div>
+
+<div class="payment-box">
+<h3>Apple Pay</h3>
+<p>Disponible</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+
+<h2>Commander</h2>
+
+<form class="form">
+
+<input type="text" placeholder="Votre nom">
+
+<input type="email" placeholder="Votre courriel">
+
+<input type="tel" placeholder="Votre téléphone">
+
+<select>
+<option>Choisir un produit</option>
+<option>Costume Noir Premium - $299</option>
+<option>Chaussures Luxe - $149</option>
+<option>Chemise Élégance - $79</option>
+<option>Costume Bleu Royal - $329</option>
+<option>Sneakers Premium - $119</option>
+<option>Costume Beige Class - $349</option>
+</select>
+
+<textarea placeholder="Taille, couleur, adresse de livraison ou message..."></textarea>
+
+<button type="button" class="submit-btn">
+Envoyer la commande
+</button>
+
+</form>
+
+<div class="contact">
+
+<p>📍 Québec, Canada</p>
+
+<p>📞 +1 418 271 2894</p>
+
+<p>✉️ info@emmaelegance.com</p>
+
+</div>
+
+</section>
+
+<a class="whatsapp"
+href="https://wa.me/14180000000"
+target="_blank">
+💬 Commander sur WhatsApp
+</a>
+
+<footer>
+© 2026 Emma Elegance Shop — Tous droits réservés.
+</footer>
+
+</body>
+</html>
